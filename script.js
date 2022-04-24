@@ -1,5 +1,5 @@
 const container = document.querySelector('.container');
-
+const clearButton = document.querySelector('.btn-clear');
 
 
 function drawSquares() {
@@ -26,6 +26,14 @@ cells.forEach(cell => {
         cell.classList.remove('hilight');
     });
 });
+
+clearButton.addEventListener('click', () => {
+    cells.forEach(cell => {
+        cell.classList.remove('hilight');
+    });
+});
+
+
 
 
 // const canvas = document.querySelector('canvas');
