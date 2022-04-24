@@ -19,9 +19,13 @@
     background-color: black;
 }
 
-.btn-clear {
+.btn-container {
+    display: flex;
+}
+
+button {
     height: 45px;
-    width: 75px;
+    width: 125px;
     margin: 25px;
     font-size: x-large;
 }

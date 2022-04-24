@@ -1,10 +1,13 @@
 const container = document.querySelector('.container');
 const clearButton = document.querySelector('.btn-clear');
+const sizeButton = document.querySelector('.btn-size');
+
+let gridSize = 16;
 
 
-function drawSquares() {
-    for (i = 0; i < 16; i++) {
-        for (j = 0; j < 16; j++) {
+function drawSquares(gridSize) {
+    for (i = 0; i < gridSize; i++) {
+        for (j = 0; j < gridSize; j++) {
             let newDiv = document.createElement('div');
             newDiv.classList.add('cell');
             newDiv.classList.add('cell' + i + j);
@@ -33,7 +36,11 @@ clearButton.addEventListener('click', () => {
     });
 });
 
+sizeButton.addEventListener('click', () => {
+    gridSize = prompt("Please enter your preferred grid size: ")
+    drawSquares(gridSize);
 
+})
 
 
 // const canvas = document.querySelector('canvas');
