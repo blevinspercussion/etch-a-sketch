@@ -11,34 +11,41 @@ function drawSquares(gridSize) {
             let newDiv = document.createElement('div');
             newDiv.classList.add('cell');
             newDiv.classList.add('cell' + i + j);
+            // newDiv.style.flexBasis = 
             container.appendChild(newDiv);
         }
     }
 
 }
 
-drawSquares();
+drawSquares(gridSize);
 
-const cells = document.querySelectorAll('.cell');
 
-cells.forEach(cell => {
-    cell.addEventListener('mouseover', () => {
-        cell.classList.add('hilight');
-    });
-    cell.addEventListener('click', () => {
-        cell.classList.remove('hilight');
-    });
-});
+function addCellListeners() {
+    const cells = document.querySelectorAll('.cell');
 
-clearButton.addEventListener('click', () => {
     cells.forEach(cell => {
-        cell.classList.remove('hilight');
+        cell.addEventListener('mouseover', () => {
+            cell.classList.add('hilight');
+        });
+        cell.addEventListener('click', () => {
+            cell.classList.remove('hilight');
+        });
     });
-});
+
+    clearButton.addEventListener('click', () => {
+        cells.forEach(cell => {
+            cell.classList.remove('hilight');
+        });
+    });
+
+}
+
 
 sizeButton.addEventListener('click', () => {
     gridSize = prompt("Please enter your preferred grid size: ")
     drawSquares(gridSize);
+    addCellListeners();
 
 })
 
