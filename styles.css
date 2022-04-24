@@ -18,3 +18,10 @@
 .hilight {
     background-color: black;
 }
+
+.btn-clear {
+    height: 45px;
+    width: 75px;
+    margin: 25px;
+    font-size: x-large;
+}
