@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+.cell {
+    display: flex;
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    flex-basis: 6%;
+}
