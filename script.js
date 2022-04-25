@@ -4,21 +4,56 @@ const sizeButton = document.querySelector('.btn-size');
 
 let gridSize = 16;
 
+// function drawSquares(gridSize, container) {
+//     for (i = 0; i < gridSize; i++) {
+//         container.setAttribute('grid-template-columns', `repeat${gridSize}, 1fr`);
+//         // container.setAttribute('grid-template-rows', `repeat${gridSize}, 1fr`);
+//         let newDiv = document.createElement('div');
+//         newDiv.classList.add('cell');
+//         container.appendChild(newDiv);
+//     }
+// }
 
-function drawSquares(gridSize) {
-    for (i = 0; i < gridSize; i++) {
-        for (j = 0; j < gridSize; j++) {
-            let newDiv = document.createElement('div');
-            newDiv.classList.add('cell');
-            newDiv.classList.add('cell' + i + j);
-            // newDiv.style.flexBasis = 
-            container.appendChild(newDiv);
-        }
+function drawSquares(gridSize, container) {
+    document.getElementById('grid').style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
+    document.getElementById('grid').style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    
+    for (i = 0; i < gridSize * gridSize; i++) {
+        let newDiv = document.createElement('div');
+        newDiv.classList.add('cell');
+        container.appendChild(newDiv);
     }
 
 }
 
-drawSquares(gridSize);
+// function drawSquares(gridSize, div) {
+//     console.log(div)
+//     div.setAttribute('grid-template-columns', `repeat${gridSize}, 1fr`);
+//     div.setAttribute('grid-template-rows', `repeat${gridSize}, 1fr`);
+//     for (i = 0; i < gridSize; i++) {
+//         for (j = 0; j < gridSize; j++) {
+//             let newDiv = document.createElement('div');
+//             newDiv.classList.add('cell');
+//             newDiv.classList.add('cell' + i + j)
+//             div.appendChild(newDiv);
+//         }
+//     }
+// }
+
+// function drawSquares(gridSize) {
+//     for (i = 0; i < gridSize; i++) {
+//         for (j = 0; j < gridSize; j++) {
+//             let newDiv = document.createElement('div');
+//             newDiv.classList.add('cell');
+//             newDiv.classList.add('cell' + i + j);
+//             // newDiv.style.flexBasis = 
+//             container.appendChild(newDiv);
+//         }
+//     }
+
+// }
+
+drawSquares(gridSize, container);
 
 
 function addCellListeners() {

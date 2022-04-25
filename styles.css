@@ -1,18 +1,21 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 1000px;
+    display: grid;
+    height: 800px;
+    width: 800px;
+    /* grid-auto-columns: 16; */
+    /* grid-auto-rows: 16; */
+    /* grid-template-columns: 1fr; */
+    /* grid-template-rows: 1fr; */
+    /* grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr); */
+    /* grid-template-rows: auto; */
+    /* grid-auto-rows: auto; */
+    border: 1px solid black;
 }
 
-
 .cell {
-    display: flex;
     border: 1px solid black;
-    height: 40px;
-    width: 40px;
-    flex: 1 1 auto;
+
 }
 
 .hilight {
@@ -29,3 +32,4 @@ button {
     margin: 25px;
     font-size: x-large;
 }
+
