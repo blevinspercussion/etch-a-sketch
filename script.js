@@ -1,6 +1,10 @@
 // const container = document.querySelector('.container');
 const clearButton = document.querySelector('.btn-clear');
 const sizeButton = document.querySelector('.btn-size');
+const gridButton = document.querySelector('.btn-grid-toggle');
+const slider = document.querySelector('.slider');
+
+const sliderValue = document.querySelector('.slider-value');
 
 let gridSize = 32;
 
@@ -24,6 +28,7 @@ function drawSquares(gridSize) {
     for (i = 0; i < gridSize * gridSize; i++) {
         let newDiv = document.createElement('div');
         newDiv.classList.add('cell');
+        newDiv.classList.add('cell-border');
         container.appendChild(newDiv);
     }
 
@@ -31,16 +36,20 @@ function drawSquares(gridSize) {
 
 // Add event listeners
 
+slider.addEventListener('drag', () => {
+
+});
+
 function addCellListeners() {
     const cells = document.querySelectorAll('.cell');
 
     cells.forEach(cell => {
-        cell.addEventListener('mouseover', () => {
+        cell.addEventListener('mouseenter', () => {
             cell.classList.add('hilight');
         });
-        cell.addEventListener('click', () => {
-            cell.classList.remove('hilight');
-        });
+        // cell.addEventListener('drag', () => {
+        //     cell.classList.remove('hilight');
+        // });
     });
 
     clearButton.addEventListener('click', () => {
@@ -57,6 +66,13 @@ sizeButton.addEventListener('click', () => {
     drawSquares(gridSize);
     addCellListeners();
 
+})
+
+gridButton.addEventListener('click', () => {
+    cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => {
+        cell.classList.toggle('cell-border');
+    })
 })
 
 drawSquares(gridSize);
