@@ -1,3 +1,10 @@
+body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 .container {
     display: grid;
     height: 800px;
@@ -24,6 +31,7 @@
 
 .btn-container {
     display: flex;
+    flex-direction: column;
 }
 
 button {
