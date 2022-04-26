@@ -1,18 +1,25 @@
-const container = document.querySelector('.container');
+// const container = document.querySelector('.container');
 const clearButton = document.querySelector('.btn-clear');
 const sizeButton = document.querySelector('.btn-size');
 
 let gridSize = 32;
 
-// Event listeners
 
 
-
-
+// Draw the grid
 
 function drawSquares(gridSize) {
+    if (document.getElementById('grid') != null) {
+        document.getElementById('grid').remove();
+    }
+    const container = document.createElement('div');
+    container.setAttribute('id', 'grid');
+    container.setAttribute('class', 'container')
+    document.body.appendChild(container);
     document.getElementById('grid').style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     document.getElementById('grid').style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
+    // cells = document.querySelectorAll('cell');
+    // cells.forEach(cell => {cell.remove();});
     
     for (i = 0; i < gridSize * gridSize; i++) {
         let newDiv = document.createElement('div');
@@ -22,8 +29,7 @@ function drawSquares(gridSize) {
 
 }
 
-
-
+// Add event listeners
 
 function addCellListeners() {
     const cells = document.querySelectorAll('.cell');
@@ -53,7 +59,7 @@ sizeButton.addEventListener('click', () => {
 
 })
 
-drawSquares(gridSize, container);
+drawSquares(gridSize);
 addCellListeners();
 
 
