@@ -6,6 +6,7 @@ const slider = document.querySelector('.slider');
 const colorPicker = document.querySelector('.color-picker');
 
 const sliderValue = document.querySelector('.slider-value');
+let color = colorPicker.value;
 
 
 let gridSize = 32;
@@ -36,7 +37,12 @@ function drawSquares(gridSize) {
 
 }
 
-// Add event listeners
+// Add event listeners\\
+
+colorPicker.addEventListener('input', () => {
+    color = colorPicker.value;
+    addCellListeners(color);
+})
 
 slider.addEventListener('input', () => {
     gridSize = slider.value;
@@ -45,12 +51,13 @@ slider.addEventListener('input', () => {
     addCellListeners();
 });
 
-function addCellListeners() {
+function addCellListeners(color) {
     const cells = document.querySelectorAll('.cell');
 
     cells.forEach(cell => {
         cell.addEventListener('mouseenter', () => {
             cell.classList.add('hilight');
+            cell.style.backgroundColor = color;
         });
         // cell.addEventListener('drag', () => {
         //     cell.classList.remove('hilight');
@@ -82,20 +89,3 @@ gridButton.addEventListener('click', () => {
 
 drawSquares(gridSize);
 addCellListeners();
-
-
-// const canvas = document.querySelector('canvas');
-// let ctx = canvas.getContext('2d');
-
-// function drawSquares() {
-//     for (i = 0; i < 16; i++) {
-//         for (j = 0; j < 16; j++) {
-//             ctx.beginPath();
-//             ctx.rect(10 + (i * 50), 10 + (j * 50), 50, 50);
-//             ctx.stroke();
-//         }
-//     }
-// }
-
-// drawSquares();
-
