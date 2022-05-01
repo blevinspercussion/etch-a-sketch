@@ -1,3 +1,8 @@
+.main-area {
+    display: flex;
+    flex-direction: column;
+}
+
 body {
     display: flex;
     flex-direction: row;
@@ -38,7 +43,7 @@ body {
 }
 
 button {
-    height: 45px;
+    height: fit-content;
     width: 125px;
     margin: 25px;
     font-size: x-large;
