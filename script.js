@@ -34,7 +34,7 @@ function drawSquares(gridSize) {
         newDiv.classList.add('cell-border');
         container.appendChild(newDiv);
     }
-
+    addCellListeners(color);
 }
 
 // Add event listeners\\
@@ -88,4 +88,3 @@ gridButton.addEventListener('click', () => {
 })
 
 drawSquares(gridSize);
-addCellListeners();
