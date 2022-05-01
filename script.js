@@ -6,7 +6,7 @@ const slider = document.querySelector('.slider');
 const colorPicker = document.querySelector('.color-picker');
 
 const sliderValue = document.querySelector('.slider-value');
-let color = colorPicker.value;
+let color;
 
 
 let gridSize = 32;
@@ -26,8 +26,7 @@ function drawSquares(gridSize) {
     document.body.appendChild(container);
     document.getElementById('grid').style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
     document.getElementById('grid').style.gridTemplateRows = `repeat(${gridSize}, 1fr)`;
-    // cells = document.querySelectorAll('cell');
-    // cells.forEach(cell => {cell.remove();});
+
     for (i = 0; i < gridSize * gridSize; i++) {
         let newDiv = document.createElement('div');
         newDiv.classList.add('cell');
@@ -72,14 +71,6 @@ function addCellListeners(color) {
 
 }
 
-
-sizeButton.addEventListener('click', () => {
-    gridSize = prompt("Please enter your preferred grid size: ")
-    drawSquares(gridSize);
-    addCellListeners();
-
-})
-
 gridButton.addEventListener('click', () => {
     cells = document.querySelectorAll('.cell');
     cells.forEach(cell => {
@@ -88,3 +79,4 @@ gridButton.addEventListener('click', () => {
 })
 
 drawSquares(gridSize);
+addCellListeners(color);

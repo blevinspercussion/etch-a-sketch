@@ -14,14 +14,7 @@ body {
     display: grid;
     height: 800px;
     width: 800px;
-    /* grid-auto-columns: 16; */
-    /* grid-auto-rows: 16; */
-    /* grid-template-columns: 1fr; */
-    /* grid-template-rows: 1fr; */
-    /* grid-template-columns: repeat(16, 1fr);
-    grid-template-rows: repeat(16, 1fr); */
-    /* grid-template-rows: auto; */
-    /* grid-auto-rows: auto; */
+
     border: 1px solid black;
 }
 
@@ -49,3 +42,8 @@ button {
     font-size: x-large;
 }
 
+.color-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
